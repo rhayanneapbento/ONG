@@ -1,1 +1,97 @@
+:root {
+    /* Cores */
+    --verde: #2E7D32;
+    --verde-claro: #81C784;
+    --amarelo: #F9A825;
+    --branco: #FFFFFF;
+    --cinza-claro: #F5F5F5;
+    --cinza: #BDBDBD;
+    --cinza-escuro: #616161;
+    --preto: #212121;
 
+    /* Tamanhos de texto */
+    --texto-1: 32px;
+    --texto-2: 24px;
+    --texto-3: 20px;
+    --texto-4: 16px;
+    --texto-5: 14px;
+
+    /* Espaçamentos */
+    --espaco-1: 8px;
+    --espaco-2: 16px;
+    --espaco-3: 24px;
+    --espaco-4: 32px;
+    --espaco-5: 40px;
+}
+
+/* FLEXBOX - CONTEÚDO PRINCIPAL */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+}
+
+/* FLEXBOX - SEÇÕES */
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+}
+
+/* IMAGEM */
+
+img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* BADGE */
+
+.badge {
+    display: inline-block;
+    background-color: var(--verde-claro);
+    color: var(--preto);
+    padding: var(--espaco-1);
+    border-radius: 5px;
+    font-size: var(--texto-5);
+    font-weight: bold;
+}
+
+/* ALERTA */
+
+.alerta {
+    background-color: var(--verde-claro);
+    color: var(--preto);
+    padding: var(--espaco-2);
+    margin-top: var(--espaco-2);
+    border-left: 4px solid var(--verde);
+    border-radius: 5px;
+}
+
+/* MODAL */
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+    background-color: rgba(46, 125, 50, 0.15);
+    padding: var(--espaco-3);
+    margin-top: var(--espaco-3);
+    border: 1px solid var(--verde);
+    border-radius: 5px;
+}
+
+/* CONTEÚDO DO MODAL */
+
+.modal-conteudo {
+    background-color: var(--branco);
+    padding: var(--espaco-2);
+    border-radius: 5px;
+}
+
+.modal-conteudo h2 {
+    color: var(--verde);
+}
