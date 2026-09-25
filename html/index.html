@@ -25,7 +25,10 @@
                 para melhorar a vida da comunidade.
             </p>
 
-            <img src="../imagens/ong.jpeg" alt="Imagem da ONG">
+            <picture>
+                <source srcset="../imagens/ong.webp" type="image/webp">
+                <img src="../imagens/ong.jpeg" alt="Voluntários de uma ONG reunidos em grupo">
+            </picture>
         </section>
 
         <section>
@@ -35,7 +38,7 @@
             <p>E-mail: contato@ong.com</p>
             <p>Endereço: São Lourenço - MG</p>
 
-            <form id="formulario">
+            <form id="formulario" novalidate>
 
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome">
@@ -48,7 +51,7 @@
 
                 <button type="submit">Enviar</button>
 
-                <div id="feedback"></div>
+                <div id="feedback" aria-live="polite"></div>
 
             </form>
         </section>
