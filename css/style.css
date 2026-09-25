@@ -8,6 +8,7 @@
     --cinza: #BDBDBD;
     --cinza-escuro: #616161;
     --preto: #212121;
+    --cor-erro: #B00020;
 
     /* Tamanhos de texto */
     --texto-1: 32px;
@@ -24,15 +25,11 @@
     --espaco-5: 40px;
 }
 
-/* FLEXBOX - CONTEÚDO PRINCIPAL */
-
 main {
     display: flex;
     flex-direction: column;
     gap: var(--espaco-2);
 }
-
-/* FLEXBOX - SEÇÕES */
 
 section {
     display: flex;
@@ -40,15 +37,65 @@ section {
     gap: var(--espaco-2);
 }
 
-/* IMAGEM */
-
 img {
     width: 100%;
     max-width: 400px;
     height: auto;
 }
 
-/* BADGE */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-1);
+}
+
+input,
+textarea {
+    padding: var(--espaco-1);
+    border: 1px solid var(--cinza);
+    border-radius: 5px;
+    font-size: var(--texto-4);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    padding: var(--espaco-1);
+    background-color: var(--verde);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    font-size: var(--texto-4);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--verde-claro);
+    color: var(--preto);
+}
+
+button:focus {
+    outline: 3px solid var(--amarelo);
+}
+
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--amarelo);
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border: 2px solid var(--cor-erro);
+}
+
+.erro {
+    color: var(--cor-erro);
+    font-size: var(--texto-5);
+    margin-bottom: var(--espaco-1);
+}
 
 .badge {
     display: inline-block;
@@ -60,8 +107,6 @@ img {
     font-weight: bold;
 }
 
-/* ALERTA */
-
 .alerta {
     background-color: var(--verde-claro);
     color: var(--preto);
@@ -70,8 +115,6 @@ img {
     border-left: 4px solid var(--verde);
     border-radius: 5px;
 }
-
-/* MODAL */
 
 .modal {
     display: flex;
@@ -83,8 +126,6 @@ img {
     border: 1px solid var(--verde);
     border-radius: 5px;
 }
-
-/* CONTEÚDO DO MODAL */
 
 .modal-conteudo {
     background-color: var(--branco);
