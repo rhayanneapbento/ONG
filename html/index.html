@@ -15,10 +15,64 @@
 
 <body>
 
+    <header>
+
+        <nav aria-label="Navegação principal">
+
+            <button
+                type="button"
+                id="menu-toggle"
+                class="menu-toggle"
+                aria-expanded="false"
+                aria-controls="menu-list">
+                ☰
+                <span class="visually-hidden">Abrir menu</span>
+            </button>
+
+            <ul id="menu-list" class="menu-list">
+
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+
+                <li class="dropdown">
+
+                    <button
+                        type="button"
+                        class="dropdown-botao"
+                        aria-expanded="false"
+                        aria-controls="submenu-projetos">
+                        Projetos
+                    </button>
+
+                    <ul id="submenu-projetos" class="submenu">
+
+                        <li>
+                            <a href="#doacoes">Doações</a>
+                        </li>
+
+                        <li>
+                            <a href="#voluntariado">Voluntariado</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
     <main>
 
         <section>
-            <h2>Sobre a ONG</h2>
+            <h1>Sobre a ONG</h1>
 
             <p>
                 Nossa ONG ajuda pessoas que precisam e realiza projetos
@@ -58,17 +112,14 @@
 
         <div id="app"></div>
 
-        <!-- BADGE -->
         <div class="badge">
             Projeto ativo
         </div>
 
-        <!-- ALERTA -->
         <div class="alerta">
             Projeto realizado com sucesso!
         </div>
 
-        <!-- MODAL -->
         <div class="modal">
             <div class="modal-conteudo">
                 <h2>Obrigado!</h2>
@@ -77,6 +128,10 @@
         </div>
 
     </main>
+
+    <footer>
+        <p>ONG - Projeto de apoio à comunidade.</p>
+    </footer>
 
     <script type="module" src="../js/script.js"></script>
 
