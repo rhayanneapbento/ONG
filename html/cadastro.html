@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - ONG</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav aria-label="Navegação principal">
+            <a href="index.html">Início</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Cadastro</h1>
+
+        <p>
+            Preencha os dados abaixo para realizar seu cadastro.
+        </p>
+
+        <form id="cadastro">
+
+            <fieldset>
+                <legend>Dados pessoais</legend>
+
+                <label for="nome">Nome completo:</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    required>
+
+                <label for="cpf">CPF:</label>
+                <input
+                    type="text"
+                    id="cpf"
+                    name="cpf"
+                    placeholder="000.000.000-00"
+                    pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                    inputmode="numeric"
+                    maxlength="14"
+                    required>
+
+                <label for="nascimento">Data de nascimento:</label>
+                <input
+                    type="date"
+                    id="nascimento"
+                    name="nascimento"
+                    required>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados de contato</legend>
+
+                <label for="email">E-mail:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required>
+
+                <label for="telefone">Telefone:</label>
+                <input
+                    type="text"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(00) 00000-0000"
+                    pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+                    inputmode="numeric"
+                    maxlength="15"
+                    required>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço</legend>
+
+                <label for="cep">CEP:</label>
+                <input
+                    type="text"
+                    id="cep"
+                    name="cep"
+                    placeholder="00000-000"
+                    pattern="[0-9]{5}-[0-9]{3}"
+                    inputmode="numeric"
+                    maxlength="9"
+                    required>
+
+                <label for="endereco">Endereço:</label>
+                <input
+                    type="text"
+                    id="endereco"
+                    name="endereco"
+                    required>
+
+                <label for="cidade">Cidade:</label>
+                <input
+                    type="text"
+                    id="cidade"
+                    name="cidade"
+                    required>
+
+                <label for="estado">Estado:</label>
+                <select
+                    id="estado"
+                    name="estado"
+                    required>
+
+                    <option value="">Selecione</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="ES">Espírito Santo</option>
+
+                </select>
+
+            </fieldset>
+
+            <button type="submit">Cadastrar</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>ONG - Projeto de apoio à comunidade.</p>
+    </footer>
+
+    <script src="../js/cadastro.js"></script>
+
+</body>
+
+</html>
