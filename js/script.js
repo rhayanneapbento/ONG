@@ -3,10 +3,15 @@ import { salvarFormulario, carregarFormulario } from "./storage.js";
 
 const app = document.getElementById("app");
 const feedback = document.getElementById("feedback");
+const menuToggle = document.getElementById("menu-toggle");
+const menuList = document.getElementById("menu-list");
+const dropdownBotao = document.querySelector(".dropdown-botao");
 
 const rotas = {
     "#inicio": "<h2>Início</h2><p>Bem-vindo à ONG.</p>",
-    "#contato": "<h2>Contato</h2><p>Entre em contato conosco.</p>"
+    "#contato": "<h2>Contato</h2><p>Entre em contato conosco.</p>",
+    "#doacoes": "<h2>Doações</h2><p>Entre em contato com a ONG para saber como contribuir.</p>",
+    "#voluntariado": "<h2>Voluntariado</h2><p>Entre em contato com a ONG para saber como participar.</p>"
 };
 
 const dados = [
@@ -32,6 +37,30 @@ function navegar() {
     } else {
         app.innerHTML = rotas[rota] || rotas["#inicio"];
     }
+}
+
+function abrirMenu() {
+    menuToggle.setAttribute("aria-expanded", "true");
+}
+
+function fecharMenu() {
+    menuToggle.setAttribute("aria-expanded", "false");
+}
+
+function alternarMenu() {
+    const aberto = menuToggle.getAttribute("aria-expanded") === "true";
+
+    if (aberto) {
+        fecharMenu();
+    } else {
+        abrirMenu();
+    }
+}
+
+function alternarSubmenu() {
+    const aberto = dropdownBotao.getAttribute("aria-expanded") === "true";
+
+    dropdownBotao.setAttribute("aria-expanded", String(!aberto));
 }
 
 function mostrarErro(campo, mensagem) {
@@ -176,6 +205,23 @@ function iniciarFormulario() {
         mensagem.value = dadosSalvos.mensagem;
     }
 }
+
+menuToggle.addEventListener("click", alternarMenu);
+
+dropdownBotao.addEventListener("click", alternarSubmenu);
+
+document.querySelectorAll(".menu-list a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        fecharMenu();
+    });
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        fecharMenu();
+        dropdownBotao.setAttribute("aria-expanded", "false");
+    }
+});
 
 window.addEventListener("hashchange", navegar);
 
